@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>郑科院四期班516教室点名</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.main>h1{
+			color:#f10215;
+			font-size: 30px;
+			text-align: center;
+			height:200px;
+			line-height: 200px;
+		}
+		.btns{
+			width:250px;
+			height:100px;
+			margin:0 auto;
+			text-align: center;
+		}
+		.btns>span{
+			display: block;
+			float: left;
+			margin-right: 10px;
+			margin-left: 3%;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background: green;
+			font-weight: bold;
+			color: #FFF;
+			cursor: pointer;
+		}
+		.btns>span:last-child{
+			background:orange;
+		}
+	</style>
+</head>
+<body>
+	<div class='main'>
+		<h1 id='title'>今天幸运的是哪位大兄弟呢？</h1>
+		<div class='btns'>
+			<span id='start'>开始</span>
+			<span id='stop'>结束</span>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+		window.onload=function(){
+			var uname=['董国良','霍仕阳','司继文','李思敏','张梦洋','李正','秦强','范兴林','刘鸽','江欣欣','王肖飞','海峰','汪宁','庞保良','张靖宇','姚波','任宇航','李勇','常九福','王帅强','段勇','陈春磊','李响','宋潇洒','陈卓','吴豪通','刘航','原云河','党辰辰','姜华超','曹芳帅','张壮','刘辉','朱富强','杨森','王新放','万书','史迎春','王亚彬','胡长江','陈胜龙','刘军峰','杨远方','杨柳','郑瑶瑶','马林林','侯志恒','姬青青','肖晓鸽','王绍坤','卢名扬','钱贵良','魏杰','张雷祥','张亚洲','谢利莱','李东洋','王世中','张祖帅','刘亚辉'];
+			var timer=null;
+			var title=document.getElementById('title'),
+				start=document.getElementById('start'),
+				stop=document.getElementById('stop');
+
+			start.onclick=function(){
+				timer=setInterval(function(){
+					var random=Math.floor(Math.random()*uname.length);
+					title.innerHTML=uname[random];
+				},50);
+			}
+			stop.onclick=function(){
+				clearInterval(timer);
+			}
+		}
+	</script>
